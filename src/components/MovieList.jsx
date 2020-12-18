@@ -31,7 +31,7 @@ class MovieList extends React.Component {
 		this.setState({ loading: true });
 		try {
 			let response = await fetch(
-				"http://www.omdbapi.com/?apikey=827e9820&s=" + this.props.query
+				"https://www.omdbapi.com/?apikey=827e9820&s=" + this.props.query
 			);
 			let movies = await response.json();
 
