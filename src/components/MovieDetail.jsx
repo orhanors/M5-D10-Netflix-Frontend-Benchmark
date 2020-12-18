@@ -73,7 +73,7 @@ class MovieDetail extends React.Component {
 		const { localStorageArrayName } = this.state;
 		try {
 			let response = await fetch(
-				"http://www.omdbapi.com/?apikey=827e9820&i=" + idFromSearchBar
+				"https://www.omdbapi.com/?apikey=827e9820&i=" + idFromSearchBar
 			);
 			let data = await response.json();
 
