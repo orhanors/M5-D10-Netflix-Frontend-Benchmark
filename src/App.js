@@ -10,6 +10,8 @@ import MovieDetail from "./components/MovieDetail";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import UserMovieList from "./components/UserMovieList";
 import Register from "./components/Register";
+
+import BackOffice from "./components/backoffice/BackOffice";
 function App() {
 	//Everytime user clicks the addList button in MovieDetails Page,this array takes Movie data
 	const [userMovies, setUserMovies] = useState([]);
@@ -33,6 +35,7 @@ function App() {
 						<MovieDetail handleClick={getUserMovie} {...props} />
 					)}
 				/>
+				<Route path='/backoffice' component={BackOffice} />
 				<Route
 					path='/myList'
 					exact

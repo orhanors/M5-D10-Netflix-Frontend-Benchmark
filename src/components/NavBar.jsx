@@ -57,6 +57,17 @@ class NavBar extends Component {
 										My List
 									</Link>
 								</li>
+
+								<li
+									className={
+										pathname == "/backoffice"
+											? "nav-item mr-3 active"
+											: "nav-item mr-3"
+									}>
+									<Link className='nav-link' to='/backoffice'>
+										Back Office
+									</Link>
+								</li>
 							</ul>
 
 							<div className='bell-container'>

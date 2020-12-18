@@ -328,3 +328,12 @@ label {
 .user-info strong {
 	color: white;
 }
+
+.product-form {
+	margin-left: 20%;
+	margin-right: 20%;
+	background-color: black;
+	color: white;
+	padding: 1rem;
+	margin-bottom: 4rem !important;
+}
