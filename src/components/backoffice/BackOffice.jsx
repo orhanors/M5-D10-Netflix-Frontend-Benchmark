@@ -60,9 +60,9 @@ const BackOffice = (props) => {
 
 	const deleteProduct = async (e) => {
 		let id = e.target.id;
-
+		setLoading(true);
 		const resp = await removeMovie(id);
-		alert(resp);
+		setLoading(false);
 		setSubmittedSize(submittedSize + 1);
 	};
 
@@ -93,7 +93,14 @@ const BackOffice = (props) => {
 						</thead>
 						<tbody>
 							{loading ? (
-								<Spinner animation='border' role='status'>
+								<Spinner
+									animation='border'
+									role='status'
+									style={{
+										marginLeft: "300%",
+										marginTop: "25%",
+										marginBottom: "25%",
+									}}>
 									<span className='sr-only'>Loading...</span>
 								</Spinner>
 							) : (
