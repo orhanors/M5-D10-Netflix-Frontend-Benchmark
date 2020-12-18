@@ -47,11 +47,9 @@ export async function removeMovie(movieId) {
 			}
 		);
 		if (response.ok) {
-			alert("Successfuly deleted");
 			return "Movie Deleted";
 		} else {
-			alert("something went wrong");
-			return await response.json();
+			return "Something went wrong";
 		}
 	} catch (error) {
 		return error;

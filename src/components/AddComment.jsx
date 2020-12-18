@@ -48,23 +48,7 @@ class AddComment extends React.Component {
 							</Form.Group>
 						</Col>
 					</Row>
-					<Row>
-						<Col md={12}>
-							<Form.Group>
-								<Form.Label htmlFor='elementId'>
-									Element ID
-								</Form.Label>
-								<Form.Control
-									type='text'
-									name='elementId'
-									id='elementId'
-									placeholder='Element ID'
-									value={this.props.movieId}
-									readOnly
-								/>
-							</Form.Group>
-						</Col>
-					</Row>
+
 					<Row className='flex justify-content-center mr-2'>
 						<Button variant='secondary' type='submit'>
 							Send

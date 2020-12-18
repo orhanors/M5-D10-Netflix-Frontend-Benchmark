@@ -61,7 +61,8 @@ const BackOffice = (props) => {
 	const deleteProduct = async (e) => {
 		let id = e.target.id;
 
-		await removeMovie(id);
+		const resp = await removeMovie(id);
+		alert(resp);
 		setSubmittedSize(submittedSize + 1);
 	};
 

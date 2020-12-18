@@ -17,7 +17,6 @@ class MovieDetail extends React.Component {
 		addComment: {
 			comment: "",
 			rate: 1,
-			elementId: this.props.match.params.id,
 		},
 		errMessage: false,
 		submittedSize: 0,
@@ -123,14 +122,12 @@ class MovieDetail extends React.Component {
 		e.preventDefault();
 		try {
 			let response = await fetch(
-				"https://striveschool-api.herokuapp.com/api/comments/",
+				`${process.env.REACT_APP_MOVIES_API}/${this.props.match.params.id}/reviews`,
 				{
 					method: "POST",
 					body: JSON.stringify(this.state.addComment),
 					headers: new Headers({
 						"Content-Type": "application/json",
-						Authorization:
-							"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmM0YmFlY2I3MDhjMjAwMTc1ZGU4OWIiLCJpYXQiOjE2MDY3MzU5ODksImV4cCI6MTYwNzk0NTU4OX0.OBy4elPjAbg0Ixy1t5_y6_96-WrblBznKTFEu0ZP3_E",
 					}),
 				}
 			);

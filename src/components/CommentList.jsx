@@ -13,14 +13,7 @@ class CommentList extends React.Component {
 	getComments = async () => {
 		try {
 			let response = await fetch(
-				"https://striveschool-api.herokuapp.com/api/comments/" +
-					this.props.movieId,
-				{
-					headers: new Headers({
-						Authorization:
-							"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI2NWY4OTk4MzViMDAwMTc1ODRlZTIiLCJpYXQiOjE2MDYzNzYyNTAsImV4cCI6MTYwNzU4NTg1MH0.cUjPWOFQsf4d1kHOs7iRz8DEhQR6YzvEIHTFEgW6Dg8",
-					}),
-				}
+				`${process.env.REACT_APP_MOVIES_API}/${this.props.movieId}/reviews`
 			);
 
 			if (response.ok) {
@@ -39,14 +32,9 @@ class CommentList extends React.Component {
 		let id = e.currentTarget.id;
 		try {
 			let response = await fetch(
-				`https://striveschool-api.herokuapp.com/api/comments/${id}`,
+				`${process.env.REACT_APP_MOVIES_API}/reviews/${id}`,
 				{
 					method: "DELETE",
-					headers: new Headers({
-						Authorization:
-							"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmM0YmFlY2I3MDhjMjAwMTc1ZGU4OWIiLCJpYXQiOjE2MDY3MzU5ODksImV4cCI6MTYwNzk0NTU4OX0.OBy4elPjAbg0Ixy1t5_y6_96-WrblBznKTFEu0ZP3_E",
-						"Content-Type": "application/json",
-					}),
 				}
 			);
 
