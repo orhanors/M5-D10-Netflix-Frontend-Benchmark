@@ -23,8 +23,11 @@ const BackOffice = (props) => {
 	const [loading, setLoading] = useState(false);
 	const [update, setUpdate] = useState(null);
 	useEffect(() => {
-		fetchMovies();
-	}, []);
+		const callMe = async () => {
+			fetchMovies();
+		};
+		callMe();
+	}, [submittedSize]);
 
 	const fetchMovies = async () => {
 		setLoading(true);
@@ -57,7 +60,7 @@ const BackOffice = (props) => {
 
 	const deleteProduct = async (e) => {
 		let id = e.target.id;
-		console.log(e.currentTarget);
+
 		await removeMovie(id);
 		setSubmittedSize(submittedSize + 1);
 	};
